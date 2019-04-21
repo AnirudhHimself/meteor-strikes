@@ -38,9 +38,9 @@ void draw()
     noStroke();
     
     float longitude = map(float(data[i][3]), -180, 180, 0, width);
-    float lattitude = map(float(data[i][4]), -190, 90, height, 0);
+    float lattitude = map(float(data[i][4]), -90, 90, height, 0);
     float markerSize = 0.05 * sqrt(float(data[i][2]) / PI); // Area proportional to mass
-    
+    ellipse(longitude, lattitude, markerSize, markerSize);
     // Add Labels for top 20 meteors
     if (i < 20)
     {
