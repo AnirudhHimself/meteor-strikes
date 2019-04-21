@@ -45,6 +45,7 @@ void draw()
     if (i < 20)
     {
       fill(0);
+      textFont(font);
       text(data[i][0], longitude + markerSize + 5, lattitude + 4);
       noFill(); // I don't want a fill on the line
       stroke(0);
