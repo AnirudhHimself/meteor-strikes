@@ -5,13 +5,14 @@ import processing.pdf.*;
 PShape map;
 String[] meteorStrikeData;
 String[][] data;
-
+PFont font;
 // SETUP
 void setup()
 {
   size(1800, 900);
   noLoop(); // tells processing to run draw() only once
   map = loadShape("WorldMap.svg");
+  font = createFont("Avenir-Medium", 14);
   
   // Import CSV Data
   meteorStrikeData = loadStrings("MeteorStrikes.csv");
