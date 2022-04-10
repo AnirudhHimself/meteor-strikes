@@ -1,12 +1,11 @@
-// LIBRARIES
 import processing.pdf.*;
 
-// GLOBAL VARIABLES
 PShape map;
 String[] meteorStrikeData;
 String[][] data;
 PFont font;
-// SETUP
+
+// Run once 
 void setup()
 {
   size(1800, 900);
@@ -23,7 +22,8 @@ void setup()
   }
 }
 
-// DRAW
+// Would typically run at some specified FPS, but we've configured this to not run in
+// a loop in the setup.
 void draw()
 {
   beginRecord(PDF, "meteorstrikes.pdf");
@@ -37,6 +37,7 @@ void draw()
     fill(173, 155, 170, 60); // Kind of a purple #AD9BAA
     noStroke();
     
+    // Use equirectangular projection
     float longitude = map(float(data[i][3]), -180, 180, 0, width);
     float lattitude = map(float(data[i][4]), -90, 90, height, 0);
     float markerSize = 0.05 * sqrt(float(data[i][2]) / PI); // Area proportional to mass
